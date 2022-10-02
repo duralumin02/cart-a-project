@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Commerce</title>
+  </head>
+  <body>
+    <header
+      class="container sticky-top bg-white d-flex justify-content-between align-items-center shadow-sm p-3 my-3"
+    >
+      <h4 class="mb-0 fw-semibold text-primary">MyShop</h4>
+      <button
+        type="button"
+        class="animate__animated btn btn-lg btn-primary position-relative"
+        id="cart"
+      >
+        <i class="bi bi-cart"></i>
+        Cart
+        <span
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+        >
+          0
+        </span>
+      </button>
+    </header>
+    <div class="main-wrapper container">
+      <div class="products-row row g-3 p-3"></div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

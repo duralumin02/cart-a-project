@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import './node_modules/bootstrap-icons/font/bootstrap-icons.css';
+
+$font-family-sans-serif: 'Poppins', sans-serif;
+
+@import './node_modules/bootstrap/scss/bootstrap.scss';
+
+.loader-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.card {
+  .product-card {
+    height: 400px;
+  }
+  .product-img {
+    height: 160px;
+    max-width: 80%;
+  }
+
+  .product-description {
+    font-size: 12px;
+  }
+}
