@@ -12,10 +12,9 @@ $font-family-sans-serif: 'Poppins', sans-serif;
   background-color: #fff;
 }
 
-.card {
-  .product-card {
-    height: 400px;
-  }
+.product-card {
+  height: 400px;
+
   .product-img {
     height: 160px;
     max-width: 80%;
@@ -24,4 +23,8 @@ $font-family-sans-serif: 'Poppins', sans-serif;
   .product-description {
     font-size: 12px;
   }
+}
+
+.product-incart-img{
+  height: 50px;
 }
