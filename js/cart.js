@@ -21,14 +21,36 @@ window.inc = (event, price) => {
   costsTotal();
 };
 
+window.dec = (event, price) => {
+  let currentCart = event.target.closest('.product-in-cart');
+  let cartQuantity = currentCart.querySelector('.cart-quantity');
+  let cartQuantityCost = currentCart.querySelector('.cart-quantity-cost');
+  if (cartQuantityCost.innerHTML != 0) {
+    cartQuantity.valueAsNumber -= 1;
+  } else {
+    return (cartQuantityCost.innerHTML = '0.00');
+  }
+  cartQuantityCost.innerHTML = (cartQuantity.valueAsNumber * price).toFixed(2);
+  costsTotal();
+};
+
+window.del = (event) => {
+  let currentCart = event.target.closest('.product-in-cart');
+  currentCart.remove();
+  costsTotal();
+};
+
 export const createProductInCart = ({ title, image, price }) => {
   let div = document.createElement('div');
   div.classList.add('product-in-cart');
   div.innerHTML = `
-        <div class="p-3 mb-3 border rounded-2">
+        <div class="p-3 mb-3 border rounded-2 position-relative overflow-hidden">
           <div class="mb-2">
             <img src="${image}" alt="" class="product-incart-img">
             <p class="mb-0 small">${title}</p>
+            <button onclick="del(event)" class="btn btn-sm btn-danger del-item-from-cart position-absolute">
+              <i class="bi bi-trash-fill"></i>
+            </button>
           </div>
           <div class="d-flex justify-content-between align-items-center">
               <div class="row justify-content-between align-items-center">
